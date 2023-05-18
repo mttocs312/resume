@@ -1,0 +1,129 @@
+body {
+  background-color: white;
+  -webkit-print-color-adjust: exact !important;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 1320px;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 315px;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+h1 {
+  font-size: 28px;
+  font-family: Garamond;
+  font-weight: 500;
+  color: white;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 22px;
+  font-family: Garamond;
+  font-style: italic;
+  font-weight: 100;
+  color: white;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: Garamond;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 6px;
+}
+
+h4 {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: rgb(147, 75, 59);
+  margin-top: 18px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+  color: black;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.contact-info {
+  padding: 24px;
+  background-color: rgb(147, 75, 59);
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 6px;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  background-color: white;
+}
+
+.section {
+  padding: 8px 24px;
+}
+
+.education-item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 6px;
+}
+
+.text-highlight {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: rgb(147, 75, 59);
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+  color: black;
+  margin-bottom: 6px;
+}
+
+.work-experience-detail {
+  display: flex;
+  flex-direction: row;
+  column-gap: 64px;
+  margin-top: 8px;
+}
+
+.responsibilities {
+  margin-top: 4px;
+  margin-left: 24px;
+}
