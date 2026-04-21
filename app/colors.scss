@@ -1,0 +1,59 @@
+/*
+    Reminder, when changing hex codes, be sure to also update
+    ./documentation/src/components/colors/parts/config.ts
+*/
+
+/* PRIMARY */
+$blue: #1976d2;
+$blue-dark: #005cb2;
+$black: #212121;
+$white: #ffffff;
+
+/* GREYS */
+$grey-darkest: #616161;
+$grey-dark: #929292;
+$grey: #bdbdbd;
+$grey-light: #e0e0e0;
+$grey-lightest: #f5f5f5;
+
+/* EXTENDED PALETTE */
+$purple: #7b1fa2;
+$purple-dark: #512da8;
+$blue-light: #6ab7ff;
+$cyan: #00838f;
+$teal: #00796b;
+
+$green-dark: #005005;
+$green: #2e7d32;
+$green-light: #60ad5e;
+$lime: #afb42b;
+$yellow: #fbc02d;
+
+$orange: #e37300;
+$red: #d32f2f;
+$pink: #d81b60;
+$brown: #5d4037;
+
+/* SHADES */
+$red-shade: #b12525;
+$pink-shade: #b51751;
+$green-shade: #003d04;
+$blue-shade: #004789;
+$black-shade: #494949;
+
+/* TINT */
+$blue-tint: #f3f8fd;
+$blue-tint-dark: #e7f1fb;
+
+/* PCA */
+$pca-blue-light: #46678a;
+$pca-blue: #143857;
+$pca-blue-dark: #10293f;
+
+/* CUSTOM */
+$rust: #934b3b;
+$whitesmoke: #f5f5f5;
+$black: #000000;
+$blue-darkest: #3b4175;
+
+$highlight-color: rgb(147, 75, 59);

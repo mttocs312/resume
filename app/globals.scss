@@ -1,0 +1,193 @@
+@use "./colors.scss" as *;
+
+$main-color: $rust;
+
+body {
+  background-color: $white;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact !important;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media print {
+    zoom: 0.7;
+  }
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 315px;
+  background-color: $whitesmoke;
+}
+
+h1 {
+  font-size: 28px;
+  font-family: Garamond;
+  font-weight: 500;
+  color: $white;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 22px;
+  font-family: Garamond;
+  font-style: italic;
+  font-weight: 100;
+  color: $white;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: Garamond;
+  font-weight: 600;
+  color: $black;
+  margin-bottom: 6px;
+}
+
+h4 {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: $main-color;
+  margin-top: 14px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+  color: $black;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.contact-info {
+  padding: 24px;
+  background-color: $main-color;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  color: $white;
+  margin-bottom: 6px;
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  background-color: $white;
+}
+
+.section {
+  padding: 8px 24px;
+}
+
+.education-item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  color: $black;
+  margin-bottom: 6px;
+}
+
+.text-highlight {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  color: $main-color;
+  margin-bottom: 6px;
+}
+
+.title {
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+  color: $black;
+  margin-bottom: 6px;
+}
+
+.work-experience-detail {
+  display: flex;
+  flex-direction: row;
+  column-gap: 64px;
+  margin-top: 8px;
+}
+
+.responsibilities {
+  margin-top: 4px;
+  margin-left: 24px;
+}
+
+.noPrint {
+  @media print {
+    position: absolute;
+    visibility: hidden !important;
+    display: none;
+    height: 0 !important;
+    width: 0 !important;
+  }
+}
+
+.button {
+  background-color: $rust;
+  border: none;
+  color: $whitesmoke;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 2px solid $whitesmoke;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: $whitesmoke;
+  color: $rust;
+  border: 2px solid $rust;
+}
+
+@media screen and (min-width: 0px) and (max-width: 720px) {
+  .page {
+    display: block;
+  }
+
+  .side-panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    background-color: $whitesmoke;
+  }
+
+  .main-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    background-color: $white;
+  }
+
+  .noPrint {
+    display: none;
+  }
+}

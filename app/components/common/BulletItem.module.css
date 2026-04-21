@@ -1,0 +1,9 @@
+.bulletStyle {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  margin-top: 2px;
+  margin-left: 6px;
+}
