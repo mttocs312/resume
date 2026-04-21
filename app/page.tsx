@@ -8,9 +8,9 @@ import Education from "./components/sections/Education";
 import Skills from "./components/sections/Skills";
 import WorkExperience from "./components/sections/WorkExperience/WorkExperience";
 import { useVersion } from "./hooks/useVersion";
+import useResizer from "./hooks/useResizer";
 
 import "./globals.scss";
-import useResizer from "./hooks/useResizer";
 
 const ACTIVE_VERSION_DEFAULT = 1;
 
