@@ -18,15 +18,14 @@ const Resume: FC = () => {
   const isDraggingRef = useRef<boolean>(false);
 
   useEffect(() => {
-    const url = window.location.href;
-
-    const parsedUrl = new URL(url);
+    const parsedUrl = new URL(window.location.href);
     const versionParam = parsedUrl.searchParams.get("version");
     const parsedVersion = versionParam
       ? parseInt(versionParam, 10)
       : ACTIVE_VERSION_DEFAULT;
 
     if (!Number.isNaN(parsedVersion)) {
+      console.log("Current version:", parsedVersion);
       setVersion(parsedVersion);
     }
   }, []);
@@ -68,17 +67,13 @@ const Resume: FC = () => {
     document.body.style.userSelect = "none";
   };
 
-  console.log("Current version:", version);
-
-  const awards = version === 0 ? <Awards /> : null;
-
   return (
     <main className="page">
       <div className="side-panel" style={{ width: `${sidePanelWidth}px` }}>
         <ContactInformation />
         <Education version={version} />
         <Skills version={version} />
-        {awards}
+        <Awards version={version} />
       </div>
       <div className="resizer" onMouseDown={handleMouseDown}></div>
       <div className="main-panel">
