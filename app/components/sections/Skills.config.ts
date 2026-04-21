@@ -95,7 +95,7 @@ const skillsConfig: SkillsConfig = {
         },
         {
           name: "Standards & Security",
-          items: ["WCAG 2.2", "W3C, OWASP, RESTful APIs, GraphQL"],
+          items: ["WCAG 2.2", "W3C", "OWASP", "RESTful APIs", "GraphQL"],
         },
         {
           name: "AI-Assisted Dev",
