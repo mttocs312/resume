@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 import Awards from "./components/sections/Awards";
 import CareerObjective from "./components/sections/CareerObjective";
 import ContactInformation from "./components/sections/ContactInformation/ContactInformation";
