@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Awards from "./components/sections/Awards";
 import CareerObjective from "./components/sections/CareerObjective";
 import ContactInformation from "./components/sections/ContactInformation/ContactInformation";
@@ -15,7 +15,7 @@ const ACTIVE_VERSION_DEFAULT = 1;
 const Resume: FC = () => {
   const [version, setVersion] = useState<number>(ACTIVE_VERSION_DEFAULT);
   const [sidePanelWidth, setSidePanelWidth] = useState<number>(315);
-  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const isDraggingRef = useRef<boolean>(false);
 
   useEffect(() => {
     const url = window.location.href;
@@ -33,33 +33,39 @@ const Resume: FC = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (isDragging) {
-        const newWidth = Math.max(200, Math.min(600, e.clientX));
-        setSidePanelWidth(newWidth);
+      if (!isDraggingRef.current) {
+        return;
       }
+
+      const newWidth = Math.max(200, Math.min(600, e.clientX));
+      setSidePanelWidth(newWidth);
     };
 
     const handleMouseUp = () => {
-      setIsDragging(false);
+      if (!isDraggingRef.current) {
+        return;
+      }
+
+      isDraggingRef.current = false;
       document.body.style.cursor = "";
       document.body.style.userSelect = "";
     };
 
-    if (isDragging) {
-      document.body.style.cursor = "col-resize";
-      document.body.style.userSelect = "none";
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-    }
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
     };
-  }, [isDragging]);
+  }, []);
 
   const handleMouseDown = () => {
-    setIsDragging(true);
+    isDraggingRef.current = true;
+    document.body.style.cursor = "col-resize";
+    document.body.style.userSelect = "none";
   };
 
   console.log("Current version:", version);
