@@ -39,8 +39,8 @@ const Resume: FC = () => {
     <main className="page">
       <div className="side-panel">
         <ContactInformation />
-        <Education />
-        <Skills />
+        <Education version={version}/>
+        <Skills version={version}/>
         <Awards />
       </div>
       <div className="main-panel">
