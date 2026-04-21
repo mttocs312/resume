@@ -10,19 +10,20 @@ import WorkExperience from "./components/sections/WorkExperience/WorkExperience"
 
 import "./globals.scss";
 
+const ACTIVE_VERSION_DEFAULT = 1;
+
 const Resume: FC = () => {
   const handleClick = () => {
     window.print();
   };
 
-  const currentUrl = new URL(window.location.href);
-  let versionStr = currentUrl.searchParams.get("version");
-  let version: number | null = null;
 
-  if (versionStr === null) {
-    version = 1; // Default version if none specified
-  } else {
-    version = parseInt(versionStr, 10);
+  const currentUrl = new URL(window.location.href);
+  const versionParam = currentUrl.searchParams.get("version");
+  let version: number = ACTIVE_VERSION_DEFAULT;
+
+  if (versionParam) {
+    version = parseInt(versionParam, 10);
   }
   console.log("Current version:", version);
 
