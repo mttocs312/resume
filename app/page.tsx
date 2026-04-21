@@ -35,13 +35,15 @@ const Resume: FC = () => {
 
   console.log("Current version:", version);
 
+  const awards = version === 0 ? <Awards /> : null;
+
   return (
     <main className="page">
       <div className="side-panel">
         <ContactInformation />
-        <Education version={version}/>
-        <Skills version={version}/>
-        <Awards />
+        <Education version={version} />
+        <Skills version={version} />
+        {awards}
       </div>
       <div className="main-panel">
         <CareerObjective version={version} />
