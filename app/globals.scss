@@ -21,7 +21,7 @@ body {
 .side-panel {
   display: flex;
   flex-direction: column;
-  max-width: 315px;
+  width: 315px;
   background-color: $whitesmoke;
 }
 
@@ -92,8 +92,19 @@ p {
   background-color: $white;
 }
 
+.resizer {
+  width: 5px;
+  background-color: transparent;
+  cursor: col-resize;
+  transition: background-color 0.2s;
+}
+
+.resizer:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .section {
-  padding: 8px 24px;
+  padding: 8px 48px 8px 24px;
 }
 
 .education-item {
@@ -136,6 +147,8 @@ p {
 }
 
 .noPrint {
+  align-self: flex-end;
+
   @media print {
     position: absolute;
     visibility: hidden !important;
@@ -185,6 +198,10 @@ p {
     flex-direction: column;
     flex: 2;
     background-color: $white;
+  }
+
+  .resizer {
+    display: none;
   }
 
   .noPrint {
