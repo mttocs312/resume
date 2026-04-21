@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import Awards from "./components/sections/Awards";
 import CareerObjective from "./components/sections/CareerObjective";
 import ContactInformation from "./components/sections/ContactInformation/ContactInformation";
@@ -13,18 +13,26 @@ import "./globals.scss";
 const ACTIVE_VERSION_DEFAULT = 1;
 
 const Resume: FC = () => {
+  const [version, setVersion] = useState<number>(ACTIVE_VERSION_DEFAULT);
+
+  useEffect(() => {
+    const url = window.location.href;
+
+    const parsedUrl = new URL(url);
+    const versionParam = parsedUrl.searchParams.get("version");
+    const parsedVersion = versionParam
+      ? parseInt(versionParam, 10)
+      : ACTIVE_VERSION_DEFAULT;
+
+    if (!Number.isNaN(parsedVersion)) {
+      setVersion(parsedVersion);
+    }
+  }, []);
+
   const handleClick = () => {
     window.print();
   };
 
-
-  const currentUrl = new URL(window.location.href);
-  const versionParam = currentUrl.searchParams.get("version");
-  let version: number = ACTIVE_VERSION_DEFAULT;
-
-  if (versionParam) {
-    version = parseInt(versionParam, 10);
-  }
   console.log("Current version:", version);
 
   return (
