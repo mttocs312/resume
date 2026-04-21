@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { getActiveDescription } from "./CareerObjective.config";
 
-const CareerObjective: FC = () => {
-  const description = getActiveDescription();
+const CareerObjective: FC<{ version: number }> = ({ version }) => {
+  const description = getActiveDescription(version);
 
   return (
     <div className="section">

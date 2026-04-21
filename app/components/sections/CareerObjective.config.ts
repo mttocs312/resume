@@ -28,8 +28,10 @@ const objective: CareerObjectiveConfig = {
   ],
 };
 
-export const getActiveDescription = (): string => {
-  const activeVersion = objective.versions[ACTIVE_VERSION];
+export const getActiveDescription = (version: number): string => {
+  const activeVersion =
+    objective.versions.find((v) => v.id === version) ||
+    objective.versions[ACTIVE_VERSION];
   return activeVersion?.description || "";
 };
 

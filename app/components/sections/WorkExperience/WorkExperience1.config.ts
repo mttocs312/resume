@@ -10,8 +10,6 @@ interface WorkExperienceConfig {
   }>;
 }
 
-const ACTIVE_VERSION = 3;
-
 const workExperience1Config: WorkExperienceConfig = {
   title: "Senior Front-End Engineer",
   company: "Carfax, Inc.",
@@ -37,31 +35,6 @@ const workExperience1Config: WorkExperienceConfig = {
     },
     {
       id: 1,
-      name: "technical-focus",
-      items: [
-        "Developed scalable dealer-focused web applications using React, MobX, TypeScript, and CSS for responsive mobile, tablet, and desktop layouts.",
-        "Optimized user experience through performance monitoring with Adobe Analytics, Google Analytics, and New Relic.",
-        "Integrated REST and GraphQL web services in collaboration with development and cloud engineering teams.",
-        "Led front-end accessibility initiative ensuring WCAG 2.2 compliance across all components.",
-        "Implemented chart libraries (ApexCharts.js, D3, Chart.js) for data visualization of dealership performance metrics.",
-        "Introduced Contentful CMS for non-technical content management and faster release cycles.",
-        "Conducted security assessments and vulnerability corrections following OWASP standards.",
-      ],
-    },
-    {
-      id: 2,
-      name: "leadership-focus",
-      items: [
-        "Mentored 4 junior front-end developers, facilitating their professional growth and skill development.",
-        "Collaborated cross-functionally with architects, cloud engineers, support, and security teams.",
-        "Led quality assurance processes ensuring timely resolution of issues within 48 hours.",
-        "Directed front-end fit and finish including pixel-perfect layouts and animations.",
-        "Contributed to visual design concepts and implementation.",
-        "Established corporate-wide accessibility standards and conversion processes.",
-      ],
-    },
-    {
-      id: 3,
       name: "ai-focus",
       items: [
         "Engineered and maintained the primary dealer-facing web platform serving ~40,000 automotive dealerships nationwide, using React, TypeScript, Next.js, and MobX across mobile, tablet, and desktop — sustaining 99.9%+ uptime across all form factors",
@@ -79,12 +52,38 @@ const workExperience1Config: WorkExperienceConfig = {
         "Received FY2023 Fox Star Award recognizing exceptional contributions and a consistent pattern of going above and beyond team expectations.",
       ],
     },
+    {
+      id: 2,
+      name: "leadership-focus",
+      items: [
+        "Mentored 4 junior front-end developers, facilitating their professional growth and skill development.",
+        "Collaborated cross-functionally with architects, cloud engineers, support, and security teams.",
+        "Led quality assurance processes ensuring timely resolution of issues within 48 hours.",
+        "Directed front-end fit and finish including pixel-perfect layouts and animations.",
+        "Contributed to visual design concepts and implementation.",
+        "Established corporate-wide accessibility standards and conversion processes.",
+      ],
+    },
+
+    {
+      id: 3,
+      name: "technical-focus",
+      items: [
+        "Developed scalable dealer-focused web applications using React, MobX, TypeScript, and CSS for responsive mobile, tablet, and desktop layouts.",
+        "Optimized user experience through performance monitoring with Adobe Analytics, Google Analytics, and New Relic.",
+        "Integrated REST and GraphQL web services in collaboration with development and cloud engineering teams.",
+        "Led front-end accessibility initiative ensuring WCAG 2.2 compliance across all components.",
+        "Implemented chart libraries (ApexCharts.js, D3, Chart.js) for data visualization of dealership performance metrics.",
+        "Introduced Contentful CMS for non-technical content management and faster release cycles.",
+        "Conducted security assessments and vulnerability corrections following OWASP standards.",
+      ],
+    },
   ],
 };
 
-export const getActiveResponsibilities = (): string[] => {
+export const getActiveResponsibilities = (version: number | null): string[] => {
   const activeVersion = workExperience1Config.versions.find(
-    (version) => version.id === ACTIVE_VERSION,
+    (v) => v.id === version,
   );
   return activeVersion?.items || [];
 };

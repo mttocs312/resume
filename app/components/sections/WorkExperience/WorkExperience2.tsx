@@ -13,9 +13,15 @@ type ResponsibilitiesType = {
   description: string;
 };
 
-const WorkExperience2: FC = () => {
+const WorkExperience2: FC<{ version: number }> = ({ version }) => {
   const config = getWorkExperience1Config();
-  const responsibilities = getActiveResponsibilities();
+
+  const responsibilities =
+    version === 0 ? (
+      <OldResponsibilites />
+    ) : (
+      <NewResponsibilities version={version} />
+    );
 
   return (
     <div>
@@ -30,16 +36,23 @@ const WorkExperience2: FC = () => {
         />
       </div>
 
-      <div className="responsibilities">
-        {responsibilities.map((skill: string, idx: number) => (
-          <BulletItem key={idx} item={skill} />
-        ))}
-      </div>
+      {responsibilities}
     </div>
   );
 };
 export default WorkExperience2;
 
+const NewResponsibilities: FC<{ version: number }> = ({ version }) => {
+  const responsibilities = getActiveResponsibilities(version);
+
+  return (
+    <div className="responsibilities">
+      {responsibilities.map((skill: string, idx: number) => (
+        <BulletItem key={idx} item={skill} />
+      ))}
+    </div>
+  );
+};
 
 const OldResponsibilites: FC = () => {
   return (

@@ -8,9 +8,9 @@ import {
   getWorkExperience1Config,
 } from "./WorkExperience1.config";
 
-const WorkExperience1: FC = () => {
+const WorkExperience1: FC<{ version: number }> = ({ version }) => {
   const config = getWorkExperience1Config();
-  const responsibilities = getActiveResponsibilities();
+  const responsibilities = getActiveResponsibilities(version);
 
   return (
     <div>
