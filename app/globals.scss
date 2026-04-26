@@ -93,14 +93,14 @@ p {
 }
 
 .resizer {
-  width: 5px;
+  width: 6px;
   background-color: transparent;
   cursor: col-resize;
   transition: background-color 0.2s;
 }
 
 .resizer:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(147, 75, 59, 0.5);
 }
 
 .section {
