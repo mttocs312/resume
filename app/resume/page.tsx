@@ -1,17 +1,16 @@
 "use client";
 
 import { FC } from "react";
+import Awards from "./components/sections/Awards";
+import CareerObjective from "./components/sections/CareerObjective";
+import ContactInformation from "./components/sections/ContactInformation/ContactInformation";
+import Education from "./components/sections/Education";
+import Skills from "./components/sections/Skills";
+import WorkExperience from "./components/sections/WorkExperience/WorkExperience";
+import { useVersion } from "./hooks/useVersion";
+import useResizer from "./hooks/useResizer";
 
-import Awards from "./resume/components/sections/Awards";
-import CareerObjective from "./resume/components/sections/CareerObjective";
-import ContactInformation from "./resume/components/sections/ContactInformation/ContactInformation";
-import Education from "./resume/components/sections/Education";
-import Skills from "./resume/components/sections/Skills";
-import WorkExperience from "./resume/components/sections/WorkExperience/WorkExperience";
-import useResizer from "./resume/hooks/useResizer";
-import { useVersion } from "./resume/hooks/useVersion";
-
-import "./globals.scss";
+import "../globals.scss";
 
 const ACTIVE_VERSION_DEFAULT = 1;
 
